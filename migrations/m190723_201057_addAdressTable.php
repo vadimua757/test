@@ -14,12 +14,12 @@ class m190723_201057_addAdressTable extends Migration
         $this->createTable('adress', [
             'id' => $this->primaryKey(11),
             'user_id' => $this->integer(11),
-            'post_code' => $this->string(64)->notNull(),
+            'post_code' => $this->integer(11)->notNull(),
             'country' => $this->string(2)->notNull(),
             'city' => $this->string(64)->notNull(),
             'street' => $this->string(64)->notNull(),
-            'house_number' => $this->integer(11)->notNull(),
-            'flat_number' => $this->integer(11)
+            'house_number' => $this->string(64)->notNull(),
+            'flat_number' => $this->string(64)
         ]);
         $this->addForeignKey('adress_user_id','adress','user_id','users','id');
     }
